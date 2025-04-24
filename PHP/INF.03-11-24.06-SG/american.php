@@ -38,9 +38,9 @@
             $sql = "SELECT DISTINCT data_ur, miot, rasa FROM swinki JOIN rasy ON rasy_id = rasy.id WHERE rasy_id=6;";
             $result = conn->query(query: $sql);
             while($row = $result -> fetch_array()) {
-                echo "<h2>Rasa: $row[2]</h2>"
-                echo "<p>Data urodzenia: $row[0]</p>"
-                echo "<p>Oznaczenie miotu: $row[1]</p>"
+                echo "<h2>Rasa: $row[2]</h2>";
+                echo "<p>Data urodzenia: $row[0]</p>";
+                echo "<p>Oznaczenie miotu: $row[1]</p>";
             }
         ?>
         <hr>
@@ -49,8 +49,8 @@
             $sql = "SELECT imie, cena, opis FROM swinki WHERE rasy_id = 6;";
             $result = conn->query(query: $sql);
             while($row = $result -> fetch_array()) {
-                echo "<h3>$row[0] - $row[1]</h3>"
-                echo "<p>$row[2]</p>"
+                echo "<h3>$row[0] - $row[1]</h3>";
+                echo "<p>$row[2]</p>";
             }
         ?>
     </main>
