@@ -1,0 +1,4 @@
+kw1: SELECT model FROM produkt
+kww2: SELECT model, nazwa, cena FROM buty JOIN nazwa_pliku FROM produkt USING(model)
+kw3:
+kw4:
