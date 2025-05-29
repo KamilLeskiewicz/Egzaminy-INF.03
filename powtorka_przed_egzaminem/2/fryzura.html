@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fryzjerstwo</title>
+    <link rel="stylesheet" href="styl8.css" />
+</head>
+<body>
+    <div id="lewy-gora">
+        <h1><a href="index.html">SALON FRYZJERSKI</a></h1>
+    </div>
+    <div id="prawy-gora">
+        <h4><a href="fryzura.html">Ceny strzyżenia</a></h4>
+        <table>
+            <tr>
+                <th>Długość włosów</th>
+                <th>Cena</th>
+            </tr>
+            <tr>
+                <th>Krótkie</th>
+                <th>25</th>
+            </tr>
+            <tr>
+                <th>Średnie</th>
+                <th>30</th>
+            </tr>
+            <tr>
+                <th>Półdługie</th>
+                <th>40</th>
+            </tr>
+            <tr>
+                <th>Długie</th>
+                <th>50</th>
+            </tr>
+        </table>
+    </div>
+    <div id="lewy-srodek">
+        <h4>PROMOCJA!</h4>
+            <input type="radio" name="d" id="krotkie" value="1" checked><label for="krotkie">Krótkie</label> <br>
+            <input type="radio" name="d" id="srednie" value="2"><label for="srednie">Średnie</label><br>
+            <input type="radio" name="d" id="poldlugie" value="3"><label for="poldlugie">Półdługie</label><br>
+            <input type="radio" name="d" id="dlugie" value="4"><label for="dlugie">Długie</label><br>
+        <button onclick="odkryj()">Odkryj promocje</button>
+        <p id="c"></p>
+
+        <script>
+
+            function odkryj() {
+                let napis = document.getElementById("c");
+                let cena = 0;
+                if(document.getElementById("krotkie").checked){
+                    cena = cena + 25 - 10;
+                }
+                else if(document.getElementById("srednie").checked){
+                    cena = cena + 30 - 10;
+                }
+                else if(document.getElementById("poldlugie").checked){
+                    cena = cena + 40 - 10;
+                }
+                else if(document.getElementById("dlugie").checked){
+                    cena = cena + 50 - 10;
+                }
+
+                napis.innerHTML = "<p>cena promocyjna: " + cena + "</p>"
+
+            }
+
+
+        </script>
+    </div>
+        <div id="prawy-dol">
+        <img src="obraz1.jpg" alt="Fryzjerka">
+    </div>
+    <div id="lewy-dol">
+        <p>Witaj! Miło nam, że odwiedziłeś nasz salon. Sprawdź promocje!</p>
+        <h4>Kontakt: 444 555 666</h4>
+    </div>
+    <footer><p>Autor: PESEL</p></footer>
+</body>
+</html>
