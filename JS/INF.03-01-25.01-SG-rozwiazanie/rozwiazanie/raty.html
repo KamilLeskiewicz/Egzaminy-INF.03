@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kursy komputerowe</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <img src="baner.png" alt="kursy komputerowe" />
+    </header>
+
+    <nav>
+      <a href="index.html">Strona główna</a>
+      <a href="raty.html">Koszt rat</a>
+      <a href="https://moje-szkolenia.pl/">Nasz partner</a>
+    </nav>
+
+    <main>
+      <h3>Oblicz miesięczną ratę</h3>
+      <input type="checkbox" name="react" id="react" class="kontrolki" /><label
+        for="react"
+        >Kurs React.js</label
+      ><br />
+      <input type="checkbox" name="js" id="js" class="kontrolki" /><label
+        for="js"
+        >Kurs JavaScript</label
+      ><br />
+      <label for="raty">Liczba rat: </label>
+      <input type="number" name="raty" id="raty" class="kontrolki" /><br />
+      <select name="miasto" id="miasto" class="kontrolki">
+        <option value="Warszawa">Warszawa</option>
+        <option value="Katowice">Katowice</option>
+        <option value="Gdańsk">Gdańsk</option></select
+      ><br />
+      <button onclick="Oblicz()" class="kontrolki">Oblicz</button><br />
+      <p id="wynik"></p>
+    </main>
+
+    <footer>
+      <p>
+        Autor strony:
+        <a
+          href="https://ee-informatyk.pl/"
+          target="_blank"
+          style="text-decoration: none; color: unset"
+          >EE-Informatyk.pl</a
+        >
+      </p>
+    </footer>
+
+    <script>
+      //   function Oblicz() {
+      //     let react = document.getElementById("react");
+      //     let js = document.getElementById("js");
+      //     let wynik = document.getElementById("wynik");
+      //     let LRat = document.getElementById("raty");
+      //     let miasto = document.getElementById("miasto");
+      //     let raty = LRat.value;
+      //     let cenaRat = 0;
+      //     let cena = 0;
+
+      //     if (react.checked) {
+      //       cena += 5000;
+      //     }
+      //     if (js.checked) {
+      //       cena += 3000;
+      //     }
+
+      //     cenaRat = cena / raty;
+      //     miasto = miasto.value;
+
+      //     wynik.innerHTML =
+      //       "Kurs odbędzie się w " +
+      //       miasto +
+      //       ". " +
+      //       "Koszt całkowity: " +
+      //       cena +
+      //       " Płacisz " +
+      //       raty +
+      //       " rat po " +
+      //       cenaRat;
+      //   }
+
+      function Oblicz() {
+        const react = document.getElementById("react");
+        const js = document.getElementById("js");
+        const wynik = document.getElementById("wynik");
+        const liczbaRat = document.getElementById("raty");
+        const miasto = document.getElementById("miasto").value;
+        let cena = 0;
+        if (react.checked) cena += 5000;
+        if (js.checked) cena += 3000;
+        wynik.innerHTML = `Kurs obędzie się w ${miasto}. Koszt całkowity: ${cena} zł. Płacisz ${
+          liczbaRat.value
+        } rat po ${Math.floor(cena / liczbaRat.value)} zł.`;
+        console.log(`cena: ${cena}`);
+      }
+    </script>
+  </body>
+</html>
